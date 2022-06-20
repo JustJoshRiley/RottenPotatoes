@@ -19,6 +19,7 @@ app.use(methodOverride('_method'))
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const reviews = require('./controllers/reviews')(app, Review);
+const comments = require('./controllers/comments')(app);
 
 app.use(express.static(path.join(__dirname, '/public')));
 
@@ -68,7 +69,7 @@ app.get('/', (req, res) => {
 
 // NEW
 app.get('/reviews/new', (req, res) => {
-    res.render('reviews-new', {title: "New Review"});
+    res.render('reviews-new', {title: "New Review"})
 })
 
 // CREATE
@@ -78,14 +79,6 @@ app.post('/reviews', (req, res) => {
         res.redirect(`/reviews/${review._id}`)
     }).catch((err) => {
         console.log(err.message)
-    })
-})
-// SHOW
-app.get('/reviews/:id', (req, res) => {
-    Review.findById(req.params.id).then((review) => {
-        res.render('reviews-show', { review: review })
-    }).catch((err) => {
-        console.log(err.message);
     })
 })
 // EDIT
@@ -103,15 +96,6 @@ app.put('/reviews/:id', (req, res) => {
         .catch(err => {
             console.log(err.message)
         })
-})
-// DELETE
-app.delete('/reviews/:id', function (req, res) {
-    console.log("DELETE review")
-    Review.findByIdAndRemove(req.params.id).then((review) => {
-        res.redirect('/');
-    }).catch((err) => {
-        console.log(err.message);
-    })
 })
 
 const port = process.env.PORT || 27017;

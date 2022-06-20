@@ -70,7 +70,6 @@
     margin-top: 2.5%;
     padding: 2.5%;
     display: grid;
-    /* grid-auto-flow: column; */
     grid-column-gap: 50px;
     grid-row-gap: 50px;
     overflow-x: hidden;
@@ -241,4 +240,40 @@
     color: #4a6029;
     border-bottom: 1px solid #4a6029;
     width: fit-content;
+}
+
+.Comment-Form-Container {
+    display: flex;
+    flex-direction: row;
+}
+.Comment-Form-Container fieldset {
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+}
+.Comment-Form-Container fieldset input {
+    height: 3vh;
+    border: 1px solid #4a6029;
+    background-color: transparent;
+}
+.Comment-Form-Container fieldset textarea {
+    height: 3vh;
+    border: 1px solid #4a6029;
+    background-color: transparent;
+}
+.save {
+    width: 4vw;
+    height: 3vh;
+}
+
+
+.card {
+    border: 2px solid #4a6029;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1.5%;
+}
+.card-block h4 {
+    color: #4a6029;
+    font-family: Arial, Helvetica, sans-serif;
 }
