@@ -23,13 +23,13 @@ const reviews = require('./controllers/reviews')(app, Review);
 app.use(express.static(path.join(__dirname, '/public')));
 
 
-const url = process.env.DB_URI || 'mongodb://localhost/rotten-potatoes';
+const url = process.env.DB_URI;
 mongoose.connect(
     url, 
-    // {
-    //     useNewUrlParser: true,
+    {
+        useNewUrlParser: true,
 
-    // },
+    },
     function(err, db) {
         assert.equal(null, err);
         console.log('Connected successfully to database');
