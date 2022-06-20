@@ -23,7 +23,7 @@ const reviews = require('./controllers/reviews')(app, Review);
 app.use(express.static(path.join(__dirname, '/public')));
 
 
-const url = process.env.DB_URI;
+const url = process.env.DB_URI || 'mongodb://localhost/rotten';
 mongoose.connect(
     url, 
     {
