@@ -114,9 +114,9 @@ app.delete('/reviews/:id', function (req, res) {
     })
 })
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 27017;
 app.listen(port, () => {
-    console.log('App listening on port 3000!')
+    console.log(`App listening on ${port}!`)
 })
 
 module.exports = app;
