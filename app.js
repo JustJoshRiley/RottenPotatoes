@@ -23,7 +23,7 @@ const reviews = require('./controllers/reviews')(app, Review);
 app.use(express.static(path.join(__dirname, '/public')));
 
 
-const url = process.env.DB_URI;
+const url = process.env.DB_URI || 'mongodb://localhost/rotten-potatoes';
 mongoose.connect(
     url, 
     // {
@@ -114,7 +114,8 @@ app.delete('/reviews/:id', function (req, res) {
     })
 })
 
-app.listen(3000, () => {
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
     console.log('App listening on port 3000!')
 })
 
