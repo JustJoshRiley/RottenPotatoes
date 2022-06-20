@@ -1,0 +1,18 @@
+<div class="Back-Home-Container">
+    <a href="/">⬅ Back to Home</a>
+</div>
+
+<div class="Review-Show-Container">
+    <div class="Edit-Container">
+        <a class="Edit" href="/reviews/{{review._id}}/edit">Edit</a>
+        <form method="POST" action="/reviews/{{review._id}}?_method=DELETE">
+            <button class="Delete" type="submit">Delete</button>
+        </form>
+    </div>
+    <div class="Review-Show">
+        <h1>{{review.title}}</h1>
+        <h2>{{review.movieTitle}}</h2>
+        <p>{{review.description}}</p>
+    </div>
+</div>
+

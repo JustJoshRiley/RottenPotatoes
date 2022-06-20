@@ -1,0 +1,20 @@
+<fieldset class="Form-Container">
+    <legend>{{title}}</legend>
+    <!-- TITLE -->
+    <p>
+        <label for="review-title">Title:</label><br>
+        <input id="review-title" placeholder="A Must See!" type="text" name="title" value="{{review.title}}"/>
+    </p>
+
+    <!-- MOVIE TITLE -->
+    <p>
+        <label for="movie-title">Movie Title:</label><br>
+        <input id="movie-title" placeholder="Iron Man 2" type="text" name="movieTitle" value="{{review.movieTitle}}" />
+    </p>
+
+    <!-- DESCRIPTION -->
+    <p>
+        <label for="review-description">Description:</label><br>
+        <textarea id="review-description" placeholder="You have to see this movie, It's ..." name="description" rows="10" />{{review.description}}</textarea>
+    </p>
+</fieldset>

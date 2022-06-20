@@ -1,0 +1,13 @@
+<div class="Reviews-Header">
+    <h1>Reviews ⬇</h1>
+    <a href="/reviews/new">New Review</a>
+</div>
+
+<div class="Reviews-Container">
+    {{#each reviews}}
+    <div class="Review">
+        <a href="/reviews/{{this._id}}">{{title}}</a>
+        <h2>{{this.movieTitle}}</h2>
+    </div>
+    {{/each}}
+</div>
