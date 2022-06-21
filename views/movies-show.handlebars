@@ -1,0 +1,18 @@
+<div class="Movies">
+    <div class="Back-Home-Container">
+        <a href="/movies/{{movie.id}}/reviews/new" class="btn btn-primary">New Review</a>
+    </div>
+    <div class="col-sm-4">
+        <img class="img-responsive" src="https://image.tmdb.org/t/p/w300{{movie.poster_path}}"/>
+    </div>
+    <div class="Movie-Info">
+        <h1>{{movie.title}}</h1>
+        <p class="lead">{{movie.overview}}</p>
+    </div>
+    <div class="Review-Movie">
+        <h1 class="col-sm-6 col-sm-offset-3">Reviews</h1>
+        {{#each reviews}}
+            {{> review}}
+        {{/each}}
+    </div>
+</div>

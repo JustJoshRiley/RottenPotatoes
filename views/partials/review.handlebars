@@ -1,0 +1,13 @@
+<div class="Review-Container">
+    <div class="col-sm-6 col-sm-offset-3">
+        <h2><a href="/movies/{{this.movieId}}/reviews/{{this._id}}">{{this.title}}</a></h2>
+        <h3>{{this.movieTitle}}</h3>
+        <p>{{this.description}}</p>
+        <p><a href="/reviews/{{this._id}}/edit">Edit</a></p>
+        <p>
+            <form method="POST" action="/reviews/{{this._id}}?_method=DELETE">
+                <button class="btn btn-primary" type="submit">Delete</button>
+            </form>
+        </p>
+    </div>
+</div>

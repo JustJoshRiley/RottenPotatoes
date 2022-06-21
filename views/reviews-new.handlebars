@@ -1,4 +1,5 @@
-<form method="POST" action="/reviews">
+<form method="POST" action="/movies/{{movieId}}/reviews">
     {{> reviews-form}}
     <button class="submit" type="submit">Save Review</button>
+    <input type="hidden" class="form-control" name="movieId" value="{{movieId}}">
 </form>

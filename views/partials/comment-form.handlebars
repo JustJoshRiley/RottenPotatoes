@@ -1,4 +1,6 @@
-<form class="Comment-Form-Container" action="/reviews/comments" method="post">
+<form class="Comment-Form-Container" action="/movies/{{review.movieId}}/reviews/{{review._id}}/comments" method="post">
+    <input type="hidden" class="form-control" value="{{review._id}}" name="reviewId">
+    <input type="hidden" class="form-control" name="movieId" value="{{review.movieId}}">
     <fieldset>
         <input type="hidden" value="{{review._id}}" name="reviewId">
         <legend>Add a Comment</legend>
